@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>New Blog App</title>
+</head>
+<body>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4">
+		
+	
+	<div>
+		<h1>
+			<% if current_user %>
+				<a href=<%= "/user/#{session[:user_id]}" %>>Bloggity Blog</a>
+		</h1>
+			<% end %>
+
+			<% if current_user == nil %>
+				<h1>
+					<a href="/">Bloggity Blog</a>
+				</h1>
+			<% end %>
+
+	</div>
+
+		</div>
+
+		<div class="col-md-7">
+			<div class="nav navbar-right">
+
+				<!-- create button -->
+				<% if current_user == nil %>
+
+				<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Create an Account!</button>
+
+				<% end %>
+
+				<!-- log in button -->
+
+				<% if current_user == nil %>
+				<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal1">Have an account? Log In!</button>
+				<% end %>
+
+				<!-- if logged in, show these buttons. User page/ update / logout / newpost  -->
+			<% if current_user %>
+
+				<button type ="button" class="btn btn-info btn-md">
+				
+					<a href=<%= "/user/#{session[:user_id]}" %>>Hello, <%= current_user.username %></a>
+				</button>
+
+				<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal2">New Post</button>
+
+				<button type="button" class="btn btn-info btn-md">
+					<a href=<%= "/user/#{session[:user_id]}/update" %>>Update your account</a>
+				</button>
+
+				<form method="POST" action="/logout">
+				<input type="submit" class="btn btn-info btn-md" value="Logout">
+					
+				</form>
+					
+				
+				<% end %>
+
+			</div>
+
+		</div>
+	</div>
+
+
+
+	<!-- if you're not logged in, show this heading -->
+	
+	<% if current_user == nil %>
+	<h2>Welcome to the Blog Site!</h2>
+		<% end %>
+
+
+
+	<!-- if you are logged in, show this link -->
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+<!-- yield views -->
+<div class="container">
+<%= yield %>
+
+</div>
+
+
+
+
+
+
+<!-- Create User Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Creat User Content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Create an account!</h4>
+      </div>
+      <div class="modal-body">
+        <p> <%= erb(:new_user, :layout => false) %></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- Log In Modal! -->
+
+<div id="myModal1" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Log In Modal Content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Log in to your account!</h4>
+      </div>
+      <div class="modal-body">
+        <p> <%= erb(:signin, :layout => false) %></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div id="myModal2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Post Modal Content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Write something new!</h4>
+      </div>
+      <div class="modal-body">
+        <p> <%= erb(:post, :layout => false) %></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+</div>
+</body>
+</html>

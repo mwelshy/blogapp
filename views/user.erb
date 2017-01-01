@@ -1,0 +1,64 @@
+<h1>Welcome to your blog! <%= @user.username %> </h1>
+
+<h2><%= @user.username %> 's Posts!</h2>
+<br>
+
+
+<!-- loop through posts, posting each one -->
+
+
+<div class="container">
+    <% current_user.posts.each do |post| %>
+        Title: <%= post.title %> <br>
+        Content: <%= post.content %><br>
+           
+
+
+
+
+
+<!-- delete button for posts -->
+
+
+
+    <form method="POST" action="/posts/destroy">
+        <input type="submit" value="delete" class="btn">
+            </form>
+
+
+<% end %>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="myModal2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Post Modal Content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Write something new!</h4>
+      </div>
+      <div class="modal-body">
+        <p> <%= erb(:post, :layout => false) %></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+

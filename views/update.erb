@@ -1,0 +1,28 @@
+<h2>Update your account details!</h2>
+
+Your current account details!
+
+Username: <%= current_user.username %><br>
+Email: <%= current_user.email %><br>
+Password: <%= current_user.password%><br>
+
+
+
+
+
+
+<form method="POST" action="/user/<%= @user.id %>/update">
+
+	<label for="name">Username</label>
+	<input type="text" name="username" placeholder="<%= @user.username %>" value="<%= @user.username %>">
+	<br>
+	<label for="email">Email</label>
+	<input type="text" name="email" placeholder="<%= @user.email %>" value="<%= @user.email %>">
+	<br>
+	<label for="password">Password</label>
+	<input type="text" name="password" placeholder="<%= @user.password %>" value="<%= @user.password %>">
+	<br>
+	<input type="submit">
+
+
+</form>
