@@ -27,11 +27,17 @@ end
 
 
 
+
+
 # show users
 get '/users' do
 	@user = User.all
 	erb :users
 end
+
+# show all users
+
+
 
 # show user by id
 

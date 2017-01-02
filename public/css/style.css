@@ -10,9 +10,11 @@ h1 a {
 .nav-row {
   padding-right: 10px; }
   .nav-row .btn {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: #3f7597;
     color: white;
-    border: 1px solid black; }
+    border: 1px solid black;
+    font-family: arial, bold;
+    font-size: 14px; }
     .nav-row .btn a {
       color: white;
       text-decoration: none; }
@@ -26,11 +28,11 @@ h1 a {
       color: #3f7597; }
 
 .navigation {
-  margin-top: 19px; }
+  margin-top: 22px; }
 
 .content {
-  background-color: rgba(100, 100, 100, 0.3);
-  border-radius: 8px;
+  background-color: rgba(63, 117, 151, 0.3);
+  border-radius: 3px;
   border: 1px solid black;
   color: whitesmoke;
   font-family: helvetica;

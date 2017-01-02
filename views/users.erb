@@ -1,10 +1,25 @@
 
 
 
-<% @user.each do |user| %>
-	User: <%= user.username %> <%= user.email %><br>
+<% if current_user %>
 
+<h2>All Users</h2>
+
+<p>
+<% @user.each do |user| %>
+	Username: <%= user.username %><br>
+	</p>
 
 <% end %>
+<% end %>
+
+<% if current_user == nil %>
+
+<h2>You need to be logged in to view this page</h2>
+
+<% end %>
+
+
+
 
 
