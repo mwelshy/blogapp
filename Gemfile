@@ -11,3 +11,5 @@
 	gem 'rake'
 
 	gem 'sinatra-flash'
+
+	gem 'sass'

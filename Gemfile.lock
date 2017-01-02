@@ -20,6 +20,7 @@ GEM
     rack-protection (1.5.3)
       rack
     rake (12.0.0)
+    sass (3.4.23)
     sinatra (1.4.7)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -41,6 +42,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   rake
+  sass
   sinatra
   sinatra-activerecord
   sinatra-flash
