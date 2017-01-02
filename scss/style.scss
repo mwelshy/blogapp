@@ -10,20 +10,25 @@ h1 {
 
 	a {
 		font-family: 'Bungee Shade', cursive;
+
 	}
+
 }
 
 .nav-row {
 
+	padding-right: 10px;
+
 
 	.btn {
-		background-color:white;
-		color: black;
+		background-color: rgba(0,0,0,0.3);
+		color: white;
 		border: 1px solid black;
 
 
+
 		a {
-			color:black;
+			color:white;
 			text-decoration: none;
 		}
 	}
@@ -32,9 +37,13 @@ h1 {
 		color: white;
 
 		a {
-			color:white;
+			color: white;
 			text-decoration: none;
 			font-size: 32px;
+		}
+
+		span {
+			color: rgba(63, 117, 151, 1);
 		}
 	}
 }
@@ -91,9 +100,15 @@ h1 {
 	input {
 		color:black;
 	}
+	text-align:center;
 }
 
 
 // footer
+
+
+// span
+
+
 
 

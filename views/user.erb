@@ -1,6 +1,12 @@
 
 <div class="row">
-<h2><%= @user.username %>'s notes</h2>
+  <div class="col-md-4">
+  <nav class="navbar navbar-light bg-faded">
+    <h2 class="navbar-brand mb-0"><%= current_user.username %>'s Posts</h2>
+  </nav>
+  </div>
+    
+  
             <% if current_user %>
 
                 <form method="POST" action="/logout">

@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div class="container-fluid">
+<div class="container">
 
 	<div class="nav-row">
 		<div class="row">
@@ -21,13 +21,13 @@
 	<div>
 		<h1>
 			<% if current_user %>
-				<a href=<%= "/user/#{session[:user_id]}" %>>quickNote</a>
+				<a href=<%= "/user/#{session[:user_id]}" %>>quick<span>Note</span></a>
 		</h1>
 			<% end %>
 
 			<% if current_user == nil %>
 				<h1>
-					<a href="/">quickNote</a>
+					<a href="/">quick<span>Note</span></a>
 				</h1>
 			<% end %>
 
@@ -128,7 +128,7 @@
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
-    <!-- Creat User Content-->
+    <!-- Create User Content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -137,9 +137,7 @@
       <div class="modal-body">
         <p> <%= erb(:new_user, :layout => false) %></p>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+
     </div>
 
   </div>

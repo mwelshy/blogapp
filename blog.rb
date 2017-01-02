@@ -13,10 +13,7 @@ def current_user
 	end
 end
 
-def new_user
-	@new_user = User.all
 
-end
 
 
 # Home View
@@ -139,10 +136,11 @@ end
 # using Post.where has to be a key value pair. ex: 
 # posts = Post.where(user_id: session[:user_id]).first
 # first targets the first one in the array. 
+# posts = Post.find_by_user_id(session[:user_id])
 
 post '/posts/destroy' do
 
-	posts = Post.find_by_user_id(session[:user_id])
+	posts = Post.where(user_id: session[:user_id]).last
 	posts.delete
 	redirect "/user/#{session[:user_id]}"
 
@@ -161,6 +159,16 @@ post '/user/:id/update' do
 	@user = User.find(session[:user_id])
 	@user.update(username: params['username'], email: params['email'], password: params['password'])
 	redirect "/user/#{session[:user_id]}"
+end
+
+
+# Destroy a user
+
+post '/user/:id/destroy' do
+	@user = User.find(session[:user_id])
+	@user.delete
+	session.clear
+	redirect "/"
 end
 
 
