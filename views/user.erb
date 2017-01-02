@@ -15,10 +15,16 @@
 <!-- loop through posts, posting each one -->
 
 
-<div class="container">
+
     <% current_user.posts.each do |post| %>
-        Title: <%= post.title %> <br>
-        Content: <%= post.content %><br>
+        <div class="post-title"><strong>Title:</strong> <%= post.title %> 
+
+            </div>
+
+        <div class="post-content">
+        Content: <%= post.content %>
+
+        </div><br>
            
 
 
