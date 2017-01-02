@@ -1,7 +1,15 @@
-<h1>Welcome to your blog! <%= @user.username %> </h1>
 
-<h2><%= @user.username %> 's Posts!</h2>
+<div class="row">
+<h2><%= @user.username %>'s notes</h2>
+            <% if current_user %>
+
+                <form method="POST" action="/logout">
+                <input type="submit" class="btn btn-info btn-md" value="Logout">
+                    
+                </form>
+                <% end %>
 <br>
+</div>
 
 
 <!-- loop through posts, posting each one -->
