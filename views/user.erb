@@ -5,16 +5,7 @@
     <h2 class="navbar-brand mb-0"><%= current_user.username %>'s Posts</h2>
   </nav>
   </div>
-    
-  
-            <% if current_user %>
 
-                <form method="POST" action="/logout">
-                <input type="submit" class="btn btn-info btn-md" value="Logout">
-                    
-                </form>
-                <% end %>
-<br>
 </div>
 
 
@@ -23,6 +14,7 @@
 
 
     <% current_user.posts.each do |post| %>
+    <div class="content">
         <div class="post-title"><strong>Title:</strong> <%= post.title %> 
 
             </div>
@@ -31,6 +23,7 @@
         Content: <%= post.content %>
 
         </div><br>
+
            
 
 
@@ -45,8 +38,9 @@
         <input type="submit" value="delete" class="btn">
             </form>
 
-
+</div>
 <% end %>
+
 
 </div>
 

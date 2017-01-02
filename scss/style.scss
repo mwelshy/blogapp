@@ -62,6 +62,7 @@ h1 {
 	font-family: helvetica;
 	padding-left: 30px;
 	padding-bottom: 10px;
+	padding-right: 10px;
 	margin-top: 20px;
 	width: 100%;
 
@@ -69,18 +70,26 @@ h1 {
 
 .post-title {
 	font-family: sans-serif;
-	color:red;
+	color: white;
 	font-size: 24px;
 	border-bottom: 1px solid black;
 }
 
 .post-content {
-	color: blue;
+	color: rgba(63,117,151,1);
 	font-size: 16px;
 
 }
 
+.new-post-title {
+	font-size: 16px;
+	color: white;
+}
 
+.new-post-content {
+	font-size: 16px;
+	color: white;
+}
 
 
 .feed {

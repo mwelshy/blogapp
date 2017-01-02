@@ -56,15 +56,17 @@
 			<% if current_user %>
 
 				<button type ="button" class="btn btn-info btn-md">
-				
 					<a href=<%= "/user/#{session[:user_id]}" %>>Hello, <%= current_user.username %></a>
 				</button>
 
-				<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal2">New Post</button>
+				<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal2">New Note</button>
 
 				<button type="button" class="btn btn-info btn-md">
 					<a href=<%= "/user/#{session[:user_id]}/update" %>>Update your account</a>
 				</button>
+
+				<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#logout">Log out</button>
+
 					
 				
 				<% end %>
@@ -159,9 +161,6 @@
       <div class="modal-body">
         <p> <%= erb(:signin, :layout => false) %></p>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
     </div>
 
   </div>
@@ -177,13 +176,29 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Write something new!</h4>
+        <h4 class="modal-title">Write a new note!</h4>
       </div>
       <div class="modal-body">
         <p> <%= erb(:post, :layout => false) %></p>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- log out modal -->
+<div id="logout" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- log out content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Logout</h4>
+      </div>
+      <div class="modal-body">
+        <p> <%= erb(:logout, :layout => false) %></p>
       </div>
     </div>
 

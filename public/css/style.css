@@ -36,18 +36,27 @@ h1 a {
   font-family: helvetica;
   padding-left: 30px;
   padding-bottom: 10px;
+  padding-right: 10px;
   margin-top: 20px;
   width: 100%; }
 
 .post-title {
   font-family: sans-serif;
-  color: red;
+  color: white;
   font-size: 24px;
   border-bottom: 1px solid black; }
 
 .post-content {
-  color: blue;
+  color: #3f7597;
   font-size: 16px; }
+
+.new-post-title {
+  font-size: 16px;
+  color: white; }
+
+.new-post-content {
+  font-size: 16px;
+  color: white; }
 
 .feed {
   background-color: whitesmoke;
