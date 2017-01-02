@@ -1,7 +1,49 @@
 body {
-  background-color: black; }
+  background-image: url("/images/blog.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
 
 h1 a {
-  color: green; }
+  font-family: 'Bungee Shade', cursive; }
+
+.nav-row .btn {
+  background-color: white;
+  color: black;
+  border: 1px solid black; }
+  .nav-row .btn a {
+    color: black;
+    text-decoration: none; }
+.nav-row h1 {
+  color: white; }
+  .nav-row h1 a {
+    color: white;
+    text-decoration: none;
+    font-size: 32px; }
+
+.navigation {
+  margin-top: 19px; }
+
+.content {
+  background-color: whitesmoke;
+  border-radius: 8px;
+  border: 1px solid black;
+  color: gray;
+  font-family: helvetica;
+  padding-left: 30px;
+  padding-bottom: 10px; }
+
+.feed {
+  background-color: whitesmoke;
+  border: 1px solid black;
+  height: 100%; }
+
+.post {
+  height: 200px;
+  width: 100%; }
+
+.modal-content {
+  background-color: rgba(255, 0, 0, 0.3);
+  color: white; }
 
 /*# sourceMappingURL=style.css.map */

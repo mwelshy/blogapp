@@ -13,6 +13,11 @@ def current_user
 	end
 end
 
+def new_user
+	@new_user = User.all
+
+end
+
 
 # Home View
 get '/' do 

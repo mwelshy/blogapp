@@ -5,25 +5,29 @@
   <link rel="stylesheet" type="text/css" href="/css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
 	<title>New Blog App</title>
 </head>
 <body>
 
 <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-4">
+
+	<div class="nav-row">
+		<div class="row">
+		
+			<div class="col-md-2">
 		
 	
 	<div>
 		<h1>
 			<% if current_user %>
-				<a href=<%= "/user/#{session[:user_id]}" %>>Bloggity Blog</a>
+				<a href=<%= "/user/#{session[:user_id]}" %>>quickNote</a>
 		</h1>
 			<% end %>
 
 			<% if current_user == nil %>
 				<h1>
-					<a href="/">Bloggity Blog</a>
+					<a href="/">quickNote</a>
 				</h1>
 			<% end %>
 
@@ -31,7 +35,8 @@
 
 		</div>
 
-		<div class="col-md-7">
+		<div class="col-md-10">
+			<div class="navigation">
 			<div class="nav navbar-right">
 
 				<!-- create button -->
@@ -60,27 +65,21 @@
 				<button type="button" class="btn btn-info btn-md">
 					<a href=<%= "/user/#{session[:user_id]}/update" %>>Update your account</a>
 				</button>
-
-				<form method="POST" action="/logout">
-				<input type="submit" class="btn btn-info btn-md" value="Logout">
-					
-				</form>
 					
 				
 				<% end %>
 
 			</div>
+			</div>
 
 		</div>
 	</div>
+</div>
 
 
 
 	<!-- if you're not logged in, show this heading -->
 	
-	<% if current_user == nil %>
-	<h2>Welcome to the Blog Site!</h2>
-		<% end %>
 
 
 
@@ -100,9 +99,42 @@
 
 <!-- yield views -->
 <div class="container">
+		<div class="row">
+
+		
+	<div class="col-md-8">
+		<div class="content">
 <%= yield %>
 
+		</div>
+	</div>
+
+	<div class="col-md-3">
+
+		<div class="feed">
+			<% if current_user == nil %>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga aliquam eligendi ea laboriosam, tempore eius id harum fugit, atque saepe eos optio labore in! Optio commodi natus aperiam reprehenderit Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quae doloribus perferendis, iusto reprehenderit voluptas amet, minus earum quidem suscipit quasi alias error voluptates ratione, praesentium iste voluptate, voluptatibus mollitia! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt dolore, facere aperiam labore veniam pariatur hic. Vel ut obcaecati beatae, eveniet ex molestias facere rerum, fugit voluptatum, at pariatur molestiae.
+			<% end %>
+
+			<% if current_user %>
+			<div class="navbar-right">
+				<form method="POST" action="/logout">
+				<input type="submit" class="btn btn-info btn-md" value="Logout">
+					
+				</form>
+				<% end %>
+			</div>
+
+
+		</div>
+	</div>
 </div>
+
+</div>
+</div>
+
+
+
 
 
 
